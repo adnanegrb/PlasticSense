@@ -1,0 +1,31 @@
+# Dataset (trop lourd pour GitHub)
+dataset/recyclable/
+dataset/non_recyclable/
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+env/
+
+# PyTorch checkpoints intermédiaires
+*.pt
+!results/model.pth
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+runs/
