@@ -6,63 +6,41 @@
 ![Framework](https://img.shields.io/badge/Framework-PyTorch-orange)
 ![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%204-red)
 
-> Prototype de poubelle intelligente développé à **Sorbonne Université**.  
-> Une caméra analyse le déchet posé sur un plateau circulaire, un modèle IA classifie le déchet en **recyclable** ou **non recyclable**, et un servomoteur oriente automatiquement le plateau vers le bon bac.
+PlasticSense is a smart waste sorting prototype developed at **Sorbonne Université**. A camera analyzes the waste placed on a small circular tray, an AI model classifies it as **recyclable** or **non-recyclable**, and a servo motor automatically tilts the tray toward the right bin.
 
----
+## Results
 
-## 🎯 Résultats
-
-| Métrique | Valeur |
+| Metric | Value |
 |---|---|
-| Meilleure Val Accuracy | 98.4% |
+| Best Val Accuracy | 98.4% |
 | **Test Accuracy** | **97.7%** |
 | F1 Score | 0.977 |
-| Objectif initial | 90% |
+| Initial target | 90% |
 
-### Progression historique
+### Progress across versions
 
-| Version | Accuracy | Description |
+| Version | Accuracy | What changed |
 |---|---|---|
-| V1 | 68.4% | Modèle initial |
-| V2 | 73.6% | Premier nettoyage dataset |
-| V3 | 84.6% | Ajout photos iPhone réelles |
-| **V4** | **97.7%** | Pipeline complet optimisé |
+| V1 | 68.4% | Baseline model |
+| V2 | 73.6% | First dataset cleanup |
+| V3 | 84.6% | Added real iPhone photos |
+| **V4** | **97.7%** | Full optimized pipeline |
 
----
-
-## 🏗️ Architecture
+## How it works
 
 ```
-Déchet posé sur le plateau
+Waste placed on the tray
         ↓
-    Caméra (capture)
+    Camera captures image
         ↓
-MobileNetV3-Small (classification)
+MobileNetV3-Small classifies
         ↓
-Servomoteur (bascule le plateau)
+Servo motor tilts the tray
         ↓
-Recyclable ♻️  /  Non recyclable 🚯
+Recyclable ♻️  /  Non-recyclable 🚯
 ```
 
----
-
-## 📁 Structure du repo
-
-```
-PlasticSense/
-  train.py          # Entraînement du modèle
-  inference.py      # Inférence sur une image
-  requirements.txt  # Dépendances
-  results/
-    model.pth       # Modèle entraîné (97.7%)
-  dataset/
-    README.md       # Instructions pour télécharger le dataset
-```
-
----
-
-## ⚙️ Installation
+## Installation
 
 ```bash
 git clone https://github.com/adnanegrb/PlasticSense.git
@@ -70,69 +48,43 @@ cd PlasticSense
 pip install -r requirements.txt
 ```
 
----
+## Usage
 
-## 🚀 Utilisation
-
-### Entraîner le modèle
-
+Train the model:
 ```bash
 python train.py
 ```
 
-Le modèle sera sauvegardé dans `results/model.pth`.
-
-### Tester sur une image
-
+Run inference on a single image:
 ```bash
-python inference.py --image chemin/vers/image.jpg
+python inference.py --image path/to/image.jpg
 ```
 
-Exemple :
-```bash
-python inference.py --image test.jpg
-# → ♻️  RECYCLABLE (confiance : 98.3%)
+Output example:
+```
+♻️  RECYCLABLE
+   Confidence : 98.3%
 ```
 
----
+## Dataset
 
-## 📊 Dataset
+The dataset is not included in this repo. See `dataset/README.md` for download instructions.
 
-Le dataset utilisé provient de Kaggle — voir `dataset/README.md` pour les instructions de téléchargement.
+8,832 images split into two classes: recyclable (plastic, paper, cardboard, metal) and non-recyclable (biological waste, mixed trash). Split: 80% train / 10% val / 10% test.
 
-- **Total** : 8 832 images
-- **Recyclable** : 4 027 images (plastique, papier, carton, métal)
-- **Non recyclable** : 3 038 images (déchets biologiques, divers)
-- **Split** : 80% train / 10% val / 10% test
+## Model
 
----
+MobileNetV3-Small pretrained on ImageNet, with the last 3 blocks unfrozen for fine-tuning. Trained with AdamW optimizer, CosineAnnealingLR scheduler, WeightedRandomSampler, and Early Stopping (patience = 3).
 
-## 🧠 Modèle
+## Hardware
 
-- **Architecture** : MobileNetV3-Small (pré-entraîné ImageNet)
-- **Fine-tuning** : 3 derniers blocs dégelés
-- **Optimizer** : AdamW (weight decay 1e-4)
-- **Scheduler** : CosineAnnealingLR
-- **Early Stopping** : patience = 3
+Raspberry Pi 4, CSI camera module, servo motor, 5V power supply.
 
----
+## Author
 
-## 🔧 Matériel
-
-- Raspberry Pi 4
-- Caméra module CSI
-- Servomoteur
-- Alimentation 5V
-
----
-
-## 👨‍💻 Auteur
-
-**Mohammed Adnane Garab** — Sorbonne Université  
+**Mohammed Adnane Garab** — Sorbonne Université
 [GitHub](https://github.com/adnanegrb)
 
----
-
-## 📄 Licence
+## License
 
 MIT License
