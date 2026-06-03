@@ -21,12 +21,10 @@ For a complete and detailed breakdown of the methodology, dataset, model archite
 
 ## Results
 
-| Metric | Value |
-|---|---|
-| Best Val Accuracy | 98.4% |
-| **Test Accuracy** | **97.7%** |
-| F1 Score | 0.977 |
-| Initial target | 90% |
+- 🎯 **Test Accuracy — 97.7%**
+- 📈 Best Validation Accuracy — 98.4%
+- ⚖️ F1 Score — 0.977
+- 🚩 Initial Target — 90% *(exceeded by +7.7 points)*
 
 ### Progress across versions
 
