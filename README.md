@@ -8,6 +8,17 @@
 
 PlasticSense is a smart waste sorting prototype developed at **Sorbonne Université**. A camera analyzes the waste placed on a small circular tray, an AI model classifies it as **recyclable** or **non-recyclable**, and a servo motor automatically tilts the tray toward the right bin.
 
+## 📄 Full Technical Reports
+
+For a complete and detailed breakdown of the methodology, dataset, model architecture, training pipeline, and results:
+
+| Language | Report | Details |
+|----------|--------|---------|
+| 🇬🇧 English | [PlasticSense\_report\_EN.pdf](https://drive.google.com/file/d/15ByuCkz6cu8L2p0HFyYfaksl60fZfuaq/view?usp=sharing) | Transfer learning, MobileNetV3-Small fine-tuning, augmentations, Early Stopping, CosineAnnealingLR — full results: **97.7% test accuracy** |
+| 🇫🇷 Français | [PlasticSense\_rapport\_FR.pdf](https://drive.google.com/file/d/1CA43dRxrRb6I9rWy6LUf4bDDZ31QWQJy/view?usp=sharing) | Jeu de données, méthodologie complète, progression V1→V4, discussion des résultats |
+
+> Everything is covered in detail in both reports — from the raw dataset construction to the final deployed model.
+
 ## Results
 
 | Metric | Value |
