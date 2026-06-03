@@ -1,12 +1,10 @@
-# 🗑️ PlasticSense: Smart Waste Sorting Bin
-
+# 🗑️ PlasticSense: Smart Waste Sorting — AI Module
 ![Accuracy](https://img.shields.io/badge/Accuracy-97.7%25-brightgreen)
 ![F1 Score](https://img.shields.io/badge/F1%20Score-0.977-brightgreen)
 ![Model](https://img.shields.io/badge/Model-MobileNetV3--Small-blue)
 ![Framework](https://img.shields.io/badge/Framework-PyTorch-orange)
-![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%204-red)
 
-PlasticSense is a smart waste sorting prototype developed at **Sorbonne Université**. A camera analyzes the waste placed on a small circular tray, an AI model classifies it as **recyclable** or **non-recyclable**, and a servo motor automatically tilts the tray toward the right bin.
+PlasticSense is an AI-powered waste classification system developed at **Sorbonne Université**. An image of the waste is fed to a lightweight neural network that classifies it as **recyclable** or **non-recyclable** in real time.
 
 ## 📄 Full Technical Reports
 
@@ -38,14 +36,10 @@ For a complete and detailed breakdown of the methodology, dataset, model archite
 ## How it works
 
 ```
-Waste placed on the tray
-        ↓
-    Camera captures image
-        ↓
+Image input
+     ↓
 MobileNetV3-Small classifies
-        ↓
-Servo motor tilts the tray
-        ↓
+     ↓
 Recyclable ♻️  /  Non-recyclable 🚯
 ```
 
@@ -60,16 +54,19 @@ pip install -r requirements.txt
 ## Usage
 
 Train the model:
+
 ```bash
 python train.py
 ```
 
 Run inference on a single image:
+
 ```bash
 python inference.py --image path/to/image.jpg
 ```
 
 Output example:
+
 ```
 ♻️  RECYCLABLE
    Confidence : 98.3%
@@ -85,13 +82,9 @@ The dataset is not included in this repo. See `dataset/README.md` for download i
 
 MobileNetV3-Small pretrained on ImageNet, with the last 3 blocks unfrozen for fine-tuning. Trained with AdamW optimizer, CosineAnnealingLR scheduler, WeightedRandomSampler, and Early Stopping (patience = 3).
 
-## Hardware
-
-Raspberry Pi 4, CSI camera module, servo motor, 5V power supply.
-
 ## Author
 
-**Mohammed Adnane Garab** — Sorbonne Université
+**Mohammed Adnane Garab** — Sorbonne Université  
 [GitHub](https://github.com/adnanegrb)
 
 ## License
