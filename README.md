@@ -17,7 +17,7 @@ For a complete and detailed breakdown of the methodology, dataset, model archite
 | 🇬🇧 English | [PlasticSense\_report\_EN.pdf](https://drive.google.com/file/d/15ByuCkz6cu8L2p0HFyYfaksl60fZfuaq/view?usp=sharing) | Transfer learning, MobileNetV3-Small fine-tuning, augmentations, Early Stopping, CosineAnnealingLR — full results: **97.7% test accuracy** |
 | 🇫🇷 Français | [PlasticSense\_rapport\_FR.pdf](https://drive.google.com/file/d/1CA43dRxrRb6I9rWy6LUf4bDDZ31QWQJy/view?usp=sharing) | Jeu de données, méthodologie complète, progression V1→V4, discussion des résultats |
 
-> Everything is covered in detail in both reports — from the raw dataset construction to the final deployed model.
+> Everything is covered in detail in both reports, from the raw dataset construction to the final deployed model.
 
 ## Results
 
