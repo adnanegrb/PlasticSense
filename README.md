@@ -1,4 +1,4 @@
-# 🗑️ PlasticSense: Smart Waste Sorting — AI Module
+# 🗑️ PlasticSense: Smart Waste Sorting, AI Module
 ![Accuracy](https://img.shields.io/badge/Accuracy-97.7%25-brightgreen)
 ![F1 Score](https://img.shields.io/badge/F1%20Score-0.977-brightgreen)
 ![Model](https://img.shields.io/badge/Model-MobileNetV3--Small-blue)
