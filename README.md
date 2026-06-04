@@ -4,7 +4,7 @@
 ![Model](https://img.shields.io/badge/Model-MobileNetV3--Small-blue)
 ![Framework](https://img.shields.io/badge/Framework-PyTorch-orange)
 
-PlasticSense is an AI-powered waste classification system developed at **Sorbonne Université**. An image of the waste is fed to a lightweight neural network that classifies it as **recyclable** or **non-recyclable** in real time.
+PlasticSense is an AI-powered waste classification system developed at **Sorbonne Université** ( Fablab Laboratory ). An image of the waste is fed to a lightweight neural network that classifies it as **recyclable** or **non-recyclable** in real time.
 
 ## 📄 Full Technical Reports
 
